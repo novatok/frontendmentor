@@ -9,9 +9,9 @@ html, body, * {
     padding: 0%;
 }
 
-html {
+/* html {
     outline: 5px solid red;
-}
+} */
 
 body {
     font-family: 'Kumbh Sans', sans-serif;
@@ -21,18 +21,42 @@ body {
 
 /* Header & Navigation Style*/
 
+hr {
+    display: none;
+}
+
 header {
-    outline: 5px solid blue;
+    /* outline: 5px solid blue; */
     width: 100vw;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
+    flex-wrap: wrap;
     align-items: center;
-    padding: 3% 0%;
+    padding: 3% 5%;
 }
 
-ul {
+nav {
     display: none;
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 3% 0 0 5%;
+    background-color: hsl(0, 0%, 100%);
+}
+
+nav ul li {
+    list-style: none;
+    line-height: 2.3;
+    font-weight: 700;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
 }
 
 #logo {
@@ -41,21 +65,21 @@ ul {
 
 #nav-icon {
     order: 1;
-    margin: 1.5% 4% 0 5%;
+    margin: 1.5% 4% 0 0%;
     border: none;
     background-color: transparent;
 }
 
 #cart-img {
     order: 3;
-    margin: 0 2% 0 20%;
+    margin: 0 5% 0 28%;
 }
 
 #image-avatar {
     height: 35px;
     width: 35px;
     order: 4;
-    margin: 0% 5%;
+    margin: 0%;
 }
 
 
@@ -84,6 +108,11 @@ main {
     position: relative;
 }
 
+.skip-btn img {
+    height: 40%;
+    margin: auto;
+}
+
 .skip-btn {
     position: absolute;
     top: 43%;
@@ -91,6 +120,7 @@ main {
     width: 8%;
     height: 8%;
     outline: none;
+    border: none;
 }
 
 #next-btn {
@@ -109,6 +139,7 @@ main {
 
 #contentbox {
     padding: 0% 5%;
+    margin-top: 3%;
 }
 
 #comp-name {
@@ -116,6 +147,7 @@ main {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9em;
+    margin-bottom: 2%;
 }
 
 h1, #curr-price {
@@ -125,10 +157,16 @@ h1, #curr-price {
     margin:  0;
 }
 
+h1 {
+    line-height: 1.1;
+    margin-bottom: 3%;
+}
+
 p {
     font-size: 0.95em;
     color: hsl(219, 9%, 45%);
     line-height: 1.6;
+    margin-bottom: 3%;
 }
 
 #curr-price span {
@@ -147,7 +185,6 @@ p {
 }
 
 #prev-price {
-    /* display:flex; */
     margin-left: 40%;
     justify-content: end;
     text-align: right;    
@@ -167,19 +204,25 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 3% 5%;
+    margin-bottom: 1.5%;
+    font-weight: bold;
+}
+
+#quantityCounter button {
+    border: none;
+    background-color: transparent;
 }
 
 #addToCart {
     background-color: hsl(26, 100%, 55%);
     width: 100%;
-    margin: 2% 0;
+    margin: 2% 0 13% 0;
     outline: none;
     border: none;
     border-radius: 8px;
     height: 12%;
     color: hsl(0, 0%, 100%);
     font-size: 0.8em;
-    padding: 2% 5%;
 }
 
 #addToCart img {
@@ -188,10 +231,173 @@ p {
 }
 
 
-
-
-
-
 /* Footer style */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (min-width: 992px) {
+    body {
+        width: 85vw;
+        margin: auto;
+    }
+
+    html {
+        outline: 5px solid yellow;
+    }
+
+    /* Header and Navigation Style */
+
+    header {
+        width: 85vw;
+        /* outline: 5px solid blue; */
+        padding: 3% 0%;
+    }
+
+    hr {
+        display: block;
+        margin-bottom: 5%;
+        border: 1px solid hsl(220, 14%, 75%);
+    }
+    
+    nav {
+        display: inline-block;
+        height: fit-content;
+        width: max-content;
+        position: static;
+        order: 2;
+        z-index: 1;
+        padding: 0 15% 1% 2%;
+        margin: 0;
+        background-color: transparent;
+        white-space: nowrap;
+    }
+    
+    nav ul li {
+        list-style: none;
+        line-height: inherit;
+        font-weight: 400;
+        display: inline;
+        padding-left: 8%;
+    }
+    
+    nav ul li a{
+        text-decoration: none;
+        color: hsl(0, 0%, 0%);
+    }
+    
+    #logo {
+        order: 1;
+        margin-right: 3%;
+    }
+    
+    #nav-icon, #close-btn {
+        display: none;
+    }
+    
+    #cart-img {
+        margin: 0 5% 0 24%;
+    }
+    
+    #image-avatar {
+        height: 40px;
+        width: 40px;
+        margin: 0%;
+    }
+    
+
+    /* Content style */
+
+    main {
+        flex-direction: row;
+    }
+
+    #image-box {
+        width: 100%;
+        flex: 3 0 45%;
+    }
+
+    #image-box .main-pics {
+        border-radius: 15px;
+    }
+    
+    #thumbnails {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .thumbs {
+        width: 20%;
+        border-radius: 15px;
+        margin-top: 2%;
+    }
+
+    .skip-btn {
+        display: none;
+    }
+
+    /* Text-content Style */
+
+    #contentbox {
+        padding: 2% 8% 0 10%;
+    }
+
+    /* #comp-name {
+        margin: 5% 0;
+    } */
+
+    h1 {
+        font-size: 2.3em;
+        margin-bottom: 5%;
+    }
+    
+    #curr-price {
+        display: inline;
+    }
+    
+    #prev-price {
+        margin-left: 0%;
+        text-align: left;
+        text-decoration: line-through;
+        display: block;
+    }
+
+    /* Call to Action Style */
+
+    #quantityCounter{
+        width: 35%;
+        height: 8%;
+        align-items: center;
+        justify-content: space-around;
+        padding: 3% 0%;
+        display: inline;
+    }
+
+    #quantityCounter button:nth-of-type(1) {
+        margin: 0 8% 0 2%;
+    }
+
+    #quantityCounter button:nth-of-type(2) {
+        margin: 0 2% 0 8%;
+    }
+
+    #addToCart {
+        width: 50%;
+        margin: 2% 5%;
+        height: 6.5%;
+        font-size: 0.8em;
+        padding: 0%;
+        margin-bottom: 13%;
+    }
+
+
+
+    footer {
+        margin-top: 15%;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    /*  */
+}

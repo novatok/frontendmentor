@@ -15,19 +15,24 @@
   <header>    
     <img src="./images/logo.svg" alt="logo" id="logo">
 
-    <button id="nav-icon"><img src="./images/icon-menu.svg" alt="icon-menu"> </button>
+    <button id="nav-icon" onclick="openNav()"><img src="./images/icon-menu.svg" alt="icon-menu"> </button>
     <nav>
       <ul id="nav-list">
-        <li class="nav-items">Collections</li>
-        <li class="nav-items">Men</li>
-        <li class="nav-items">Women</li>
-        <li class="nav-items">About</li>
-        <li class="nav-items">Contact</li>
+        <li id="close-btn"> <a href="javascript:void(0)" onclick="closeNav()"><img src="./images/icon-close.svg" alt="icon-close"></a></li>
+        <br>
+        <li class="nav-items"> <a href="#">Collections</a>  </li>
+        <li class="nav-items"> <a href="#">Men</a>  </li>
+        <li class="nav-items"> <a href="#">Women</a> </li>
+        <li class="nav-items"> <a href="#">About</a> </li>
+        <li class="nav-items"> <a href="#">Contact</a> </li>
       </ul>
     </nav>
     <img id="cart-img" src="./images/icon-cart.svg" alt="cart">
     <img id="image-avatar" src="./images/image-avatar.png" alt="image-avatar">
   </header>
+  <hr>
+
+  
   
   <main>
     <section id="image-box">
@@ -61,9 +66,9 @@
       <span  id="prev-price"> $250.00</span>
       <br> <br>
       <div id="quantityCounter">
-        <img src="./images/icon-minus.svg" alt="icon-minus"></img>
-        <span>0</span> 
-        <img src="./images/icon-plus.svg" alt="icon-plus">        
+        <button><img src="./images/icon-minus.svg" alt="icon-minus"></img></button>
+        <span id="counter">0</span> 
+        <button><img src="./images/icon-plus.svg" alt="icon-plus"></button>      
       </div>
       <button id="addToCart"><img src="./images/icon-cart2.svg" alt="cart"> Add to cart</button> 
     </section>
